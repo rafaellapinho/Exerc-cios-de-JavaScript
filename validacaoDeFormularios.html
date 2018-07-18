@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <form  name="myForm" action="/abc" method="post" onsubmit =" return submitForm()" >
+    <input type="text" name="message" />
+    <button type="submit">Enviar</button>
+</form>
+    <script>
+        function submitForm(){
+            var myForm = document.forms.myForm
+            if(myForm.message.value === ''){
+                alert('A mensagem é obrigatoria')
+                return false
+            } 
+            //se o campo estiver vazio ele nao vai para proxima pagina
+        }
+    </script>
+</body>
+</html>
+
+<!--Pode-se acessar diretamente o formulario por document.forms.myForm
+document.forms.myForm.message.value acessa o valor da mensagem do formulario para podermos fazer a validação
+
+-->

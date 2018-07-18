@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div></div>
+
+<input type="text" id="myInput" />
+<button>Click Me</button>
+
+<ul>
+    <li class="list-item" >Item 1</li>
+    <li class="list-item" >Item 2</li>
+    <li class="list-item" >Item 3</li>
+</ul>
+    <script>
+    </script>
+</body>
+</html>
+
+<!--Comandos par acessar elementos do DOM:
+document.getElementsByTagName('Button')
+document.getElementsByTagName('li')
+document.getElementById('myInput')
+document.getElementsByClassName('list.item')
+document.querySelector('button')
+document.querySelector('li') seleciona o primeiro que achar
+document.querySelectorAll('li')
+document.querySelectorAll('#myInput') se for id tem que usar # 
+document.querySelectorAll('.list.item') se for classe tem que usar . na frente -->
+
+<!-- Alterar Elementos 
+document.querySelector('.list-item') selecionamos o list-item
+document.querySelector('.list-item').textContent  selecionamos o texto do elemento ou seja Item 1
+document.querySelector('.list-item').textContent = 'TreinaWeb' Altera o texto Item 1 para TreinaWeb
+document.querySelector('.list-item').innerHTML acessa o HTML e não mais o texto
+document.querySelector('.list-item').innerHTML = '<b>abc</b>' modifica o Item 1 para abc em negrito
+document.querySelector('.list-item').outerHTML retorna todod elemento <li class="list-item" >Item 1</li>
+ -->
+
+<!--inserir e remover elementos 
+documento.querySelector('input').remove() remove o elemento
+var myLi = documento.createElement('li') cria um elemento mas n insere no html
+myLi.innerText = ('TreinaWeb') para inserir o elemento
+document.querySelector('div').appendChild(myLi) coloca myLi na div
+document.querySelector('.list-item:first-child').insertAdjacentHTML('beforebegin', myLi.outerHTML)  adiciona o elemento antes do Item1
+document.querySelector('.list-item').insertAdjacentHTML('afterend', myLi.outerHTML)  adiciona o elemento depois do Item1
+document.querySelect('ul').appendChil(myLi) adiciona myLi no final
+document.querySelect('ul').insertBefore(myLi,document.querySelector('ul').firstChild) insere myLi antes do primeiro filho
+document.querySelect('#myInput').cloneNode(true) copia o elemento, pode salvar em uma variavel para utilizalo
+-->
+
+<!--Mover pela árvore de elementos
+document.querySelector('ul').children acessa todos os flhos deste elemento
+document.querySelector('ul').querySelectAll('li') seleciona todos elementos li dentro do ul
+document.querySelector('ul').querySelectAll('li')[1] seleciona o Item 2
+var el = ocument.querySelector('ul').querySelectAll('li')[1] guarda no El
+el.parentElement seleciono o pai dele, ou seja a ul
+el.nextElementSibling seleciona o proximo elemento irmão, ou seja o Item 3
+el.previousElementSibling seleciona elemento irmão anterior , ou seja o Item 1
+-->
+
+<!-- Valores e atributos dos elementos
+document.querySelector('#myInput').value valor do myInput
+document.querySelector('#myInput').value = 123 altera o valor do myInput
+document.querySelector('#myInput').getattibute('type') tipo do atributo no myInput
+document.querySelector('#myInput').setattibute('type','number') altero o tipo do atributo do myInput para numero
+document.querySelector('#myInput').classList.add('my-input') adiciona a classe my-input no myInput
+document.querySelector('#myInput').classList.contains('my-input') retorna se existe a classe my-input no myInput
+document.querySelector('#myInput').classList.remove('my-input') para remover a classe
+document.querySelector('#myInput').classList.toggle('my-input') se nao tiver essa classe no elemento ele insere a classe, e se ja tiver a classe no elemento ele retira
+document.querySelector('#myInput').style.cackgrounsColor = 'red' mudar o estilo do elemento
+-->
+

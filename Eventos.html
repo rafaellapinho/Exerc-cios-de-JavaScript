@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div></div>
+
+<input type="text" id="myInput" />
+<button>Click Me</button>
+
+<ul>
+    <li class="list-item" >Item 1</li>
+    <li class="list-item" >Item 2</li>
+    <li class="list-item" >Item 3</li>
+</ul>
+    <script>
+    </script>
+</body>
+</html>
+
+<!-- Comandos dos Eventos:
+document.querySelector('#myInput').addEventListener('click',function(){
+    console.log('elemento clicado')
+}) ele seleciona o myInput, o addEventListener fica esperando o evento click do mouse, quando clicado apresenta mensagem no console
+
+var myFunc = function(){console.log('my click')}
+document.querySelector('#myInput').addEventListener('click',myFunc)
+para poder chamar de novo a função é interessante sempre salvara em uma variavel, para salvar na variavel ela sofre essas mudanças
+
+document.querySelector('#myInput').removeEventListener('click',myFunc)  para remover o evento
+
+document.querySelector('#myInput').addEventListener('keyup', function(){
+    console.log(this.value)
+}) apresenta no console quando soltamos qualquer tecla
+
+document.querySelector('li').addEventListener('click',
+function(event){
+    event.stopPropagation()
+    console.log(this)
+})  para não propagar os eventos do pai no filho
+
+document.querySelector('form').addEventListener('submit',
+function(event){
+    event.preventDefault()
+    console.log(this)
+})  para enviar formularios automaticamente
+
+document.querySelector('button').addEventListener('contextmenu',
+function(event){
+    event.preventDefault()
+    console.log(this)
+})  para evitar comportamento padrão, então quando clica com botão direito no botão ele não mostra aquelas opçoes que aparecem por padrão
+
+document.querySelector('input').addEventListener('click',
+function(event){
+    console.log(event)
+}) mostra o que acontece no evento
+
+document.querySelector('input').addEventListener('keyup',
+function(event){
+    if(event.keyCode == 13){
+        console.log(this.value)
+    }
+}) quando apertamos a tecla enter que é 13 ele mostra o valor do input, pode ser usado para envio de algo ao ser dado um enter
+
+Timers:
+var myTimeout = setTimeout(function(){
+    console.log(5555)
+}, 2000
+}) retorna 5555 no console depois de 2segundos
+
+clearTimeOut(mytimeout) para cancelar esse timeout
+
+var myinterval = setinterval(function(){
+    console.log(5555)
+}, 2000
+}) mostra no console 5555 a cada 2 segundos
+
+Deboucing:
+var myDiv = document.querySelector('div'),
+    myInput = document.querySelector('input')
+
+myInput.addEventListener('keyup', function(){
+    myDiv.textContent = this.value;
+}) conforme eu escrevo no myInput ele vai alterando a div para o que eu escrevo   
+    
+Isso pode ser ruim, pois por exemplo se estou buscando uma musica no youtube e ele envia para o servidor o que escrevo ele tem que enviar muitas requisiçoes a cada letra que eu escrevo o Deboucing ajuda a resolver esse problema
+Agora usando Debooucing:
+
+var myDiv = document.querySelector('div'),
+    myInput = document.querySelector('input')
+ var myTimeout
+
+myInput.addEventListener('keyup', function(){
+    clearTimeout(myTimeout);
+    myTimeout = setTimeout(()=>{
+        myDiv.textContent = this.value
+    }, 1000)
+}) Quando usuário soltar uma tecla ele vai limpar o Timeout e criar outro timeout, depois que passar 1 segundo ele atualiza nossa div. Quando o usuario fica sem soltar a tecla por um segundo é disparado o timeout  
+-->

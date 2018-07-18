@@ -1,0 +1,33 @@
+<!--Desafio: Fazer um campo de input, quando digitar qualquer coisa e apertar a tecla enter ele atualiza a lista e apaga o input, e se clicar em qualquer item da lista ele deve ser removido. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" onkeyup="insert(event)" /> <!--onkeyup chamada o insert a cada vez que solta a tecla do teclado-->
+<ul></ul>
+    <script>
+        var list = [1,2,3],
+        listElement = document.querySelector('ul')
+
+        function insert(event){
+            if(event.keyCode === 13){ //se apertar o enter
+                list.push(event.target.value) //acrescenta o valor na lista
+                event.target.value = '' //apaga o valor do input
+                render()
+            }
+        }
+
+        function remove(index){
+            list.splice(index, 1) //splice diz os elementos que quero remover: remove apartir do index e vai até 1
+            render() //Chama render para atualizar a lista
+        }
+   
+        function render(){ //Renderiza (carrega) os elementos na tela
+            listElement.innerHTML = list.map((item, index) => {  //Altera um código html dentro da listElement
+                return`<li onclick="remove(${index})">${item}</li>`  //O item é o que vai ser escrito
+            }).join('') // o join é para juntar os elementos
+        }
+        render()
+    </script>
+</body>
+</html>
